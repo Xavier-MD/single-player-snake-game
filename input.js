@@ -1,3 +1,5 @@
+const { textInterpreter } = require("./constants");
+
 let connection;
 
 //listen for keyboard input
@@ -5,7 +7,7 @@ const setupInput = (conn) => {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
+  stdin.setEncoding(textInterpreter);
   stdin.resume();
   stdin.on("data", handleUserInput);
   return stdin;
